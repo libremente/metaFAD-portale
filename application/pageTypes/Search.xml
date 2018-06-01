@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mvc:Page id="Page"
+	xmlns:glz="http://www.glizy.org/dtd/1.0/"
+	xmlns:solr="metacms.modules.solr.views.components.*"
+	xmlns:mvc="org.glizy.mvc.components.*"
+	xmlns:arc="metafad.archive.views.components.*"
+	xmlns:mwf="metafad.views.components.*"
+	controllerName="metacms.modules.solr.controllers.*"
+	templateType="php"
+	templateFileName="search.php"
+	defaultEditableRegion="content">
+	<glz:Import src="Common.xml" />
+	<glz:EmptyComponent editableRegion="detailBox" skin="detailBox.html" />
+
+	<mvc:State name="index,sbn">
+		<solr:Solr id="solr" paginate="{paginate}" recordType="sbn"/>
+		<glz:Panel cssClass="clearfix">
+			<solr:Facet editableRegion="filters" id="facet" title="{i18n:Raffina la ricerca}" dataProvider="{solr}" skin="solr_facet.html" numFacetsToShow="20" routeUrl="solr_search" />
+			<solr:RecordSetList id="recordSetList" dataProvider="{solr}" title="{i18n:Search results}" routeUrl="solr.detail" cssClass="odd,even" skin="solr_list.html" recordType="sbn" processCell="metacms.modules.solr.views.renderers.ProcessCell" controllerName="museoweb.modules.ecommerce.controllers.AddCart">
+				<solr:field name="Autore" />
+				<solr:field name="Titolo" />
+				<solr:field name="Fa parte di" />
+ 				<solr:field name="Pubblicazione" />
+				<solr:field name="Livello bibliografico" />
+				<solr:field name="Tipo documento" />
+				<solr:field name="Visibility" />
+			</solr:RecordSetList>
+		</glz:Panel>
+
+		<mwf:PaginateResult editableRegion="paginate" id="paginate" pageLength="15" skin="paginate.html" showSortingFilters="true"/>
+	</mvc:State>
+
+	<mvc:State name="iccd">
+		<solr:Solr id="solr" paginate="{paginate}" solrUrl="metacms.iccd.url" solrFieldUrl="metacms.iccd.field.url" recordType="iccd"/>
+
+		<glz:Panel cssClass="clearfix">
+			<solr:Facet editableRegion="filters" id="facet" title="{i18n:Raffina la ricerca}" dataProvider="{solr}" skin="solr_facet.html" numFacetsToShow="20" routeUrl="solr_search_iccd" />
+			<solr:RecordSetList id="recordSetList" dataProvider="{solr}" title="{i18n:Search results}" routeUrl="solr.detail" cssClass="odd,even" skin="iccd_list.html" recordType="iccd" processCell="metacms.modules.solr.views.renderers.ProcessCell"  controllerName="museoweb.modules.ecommerce.controllers.AddCart">
+				<solr:field name="Tipo di scheda" />
+				<solr:field name="Codice univoco" />
+				<solr:field name="Definizione culturale: autore" />
+				<solr:field name="Titolo sintetica" />
+				<solr:field name="Soggetto: identificazione" />
+				<solr:field name="Soggetto: titolo" />
+				<solr:field name="Level" />
+				<solr:field name="Visibility" />
+			</solr:RecordSetList>
+		</glz:Panel>
+
+		<mwf:PaginateResult editableRegion="paginate" id="paginate" pageLength="15" skin="paginate.html" showSortingFilters="true"/>
+	</mvc:State>
+
+	<mvc:State name="archive">
+		<solr:Solr id="solr" paginate="{paginate}" solrUrl="metacms.archive-ca.url" solrFieldUrl="metacms.archive-ca.field.url" recordType="archive"/>
+
+		<glz:Panel cssClass="clearfix">
+			<solr:Facet editableRegion="filters" id="facet" title="{i18n:Raffina la ricerca}" dataProvider="{solr}" skin="solr_facet.html" numFacetsToShow="20" routeUrl="solr_search_archive" />
+			<solr:RecordSetList id="recordSetList" dataProvider="{solr}" title="{i18n:Search results}" routeUrl="solr.detail" cssClass="odd,even" skin="archive_list.html" recordType="archive" processCell="metacms.modules.solr.views.renderers.ProcessCell" >
+				<solr:field name="Denominazione + Estremo cronologico testuale (relativo)" />
+				<solr:field name="Primo livello (label)" />
+				<solr:field name="InstituteKey" />
+				<solr:field name="Visibility" />
+				<solr:field name="Livello di descrizione" />
+				<solr:field name="Soggetto conservatore (in Contesto di provenienza)" />
+			</solr:RecordSetList>
+		</glz:Panel>
+
+		<mwf:PaginateResult editableRegion="paginate" id="paginate" pageLength="15" skin="paginate.html" />
+	</mvc:State>
+
+	<mvc:State name="metaindice">
+		<solr:Solr id="solr" paginate="{paginate}" solrUrl="metacms.metaindice.url" solrFieldUrl="metacms.metaindice.field.url" recordType="metaindice"/>
+
+		<glz:Panel cssClass="clearfix">
+			<solr:Facet editableRegion="filters" id="facet" title="{i18n:Raffina la ricerca}" dataProvider="{solr}" skin="solr_facet.html" numFacetsToShow="20" routeUrl="solr_search_metaindice" />
+			<solr:RecordSetList id="recordSetList" dataProvider="{solr}" title="{i18n:Search results}" routeUrl="solr.detail" cssClass="odd,even" skin="metaindice_list.html" recordType="metaindice" processCell="metacms.modules.solr.views.renderers.ProcessCell" controllerName="museoweb.modules.ecommerce.controllers.AddCart">
+				<solr:field name="dominio" />
+				<solr:field name="denominazione/titolo" />
+				<solr:field name="autore" />
+				<solr:field name="fa parte di" />
+				<solr:field name="responsabilita" />
+				<solr:field name="complesso" />
+				<solr:field name="Visibility" />
+				<solr:field name="fa_parte_di" />
+				<solr:field name="collezione" />
+			</solr:RecordSetList>
+		</glz:Panel>
+
+		<mwf:PaginateResult editableRegion="paginate" id="paginate" pageLength="15" skin="paginate.html" showSortingFilters="true"/>
+	</mvc:State>
+
+	<mvc:State name="metaindiceau">
+		<solr:Solr id="solr" paginate="{paginate}" solrUrl="metacms.metaindice-au.url" solrFieldUrl="metacms.metaindice-au.field.url" recordType="metaindiceau"/>
+
+		<glz:Panel cssClass="clearfix">
+			<solr:Facet editableRegion="filters" id="facet" title="{i18n:Raffina la ricerca}" dataProvider="{solr}" skin="solr_facet.html" numFacetsToShow="20" routeUrl="solr_search_metaindice_au" />
+			<solr:RecordSetList id="recordSetList" dataProvider="{solr}" title="{i18n:Search results}" routeUrl="solr.detail" cssClass="odd,even" skin="metaindice_au_list.html" recordType="authority" processCell="metacms.modules.solr.views.renderers.ProcessCell" >
+				<solr:field name="tipo entità" />
+				<solr:field name="tipo scheda" />
+				<solr:field name="denominazione/nome/sintetica" />
+				<solr:field name="denominazione/nome" />
+			</solr:RecordSetList>
+		</glz:Panel>
+
+		<mwf:PaginateResult editableRegion="paginate" id="paginate" pageLength="15" skin="paginate.html" />
+	</mvc:State>
+
+	<mvc:State name="archiveud">
+		<solr:Solr id="solr" paginate="{paginate}" solrUrl="metacms.archive-ud.url" solrFieldUrl="metacms.archive-ud.field.url"/>
+
+		<glz:Panel cssClass="clearfix">
+			<solr:Facet editableRegion="filters" id="facet" title="{i18n:Raffina la ricerca}" dataProvider="{solr}" skin="solr_facet.html" numFacetsToShow="20" routeUrl="solr_search_archive_ud" />
+			<solr:RecordSetList id="recordSetList" dataProvider="{solr}" title="{i18n:Search results}" routeUrl="solr.detail" cssClass="odd,even" skin="archive_ud_list.html" recordType="archive" processCell="metacms.modules.solr.views.renderers.ProcessCell"  controllerName="museoweb.modules.ecommerce.controllers.AddCart">
+				<solr:field name="Titolo originale + Cronologia.Estremo cronologico testuale | Titolo attribuito + Cronologia.Estremo cronologico testuale (UN)" />
+				<solr:field name="Denominazione + Estremo cronologico testuale (relativo)" />
+				<solr:field name="Primo livello (label)" />
+				<solr:field name="Livello superiore (UN)" />
+				<solr:field name="Visibility" />
+			</solr:RecordSetList>
+		</glz:Panel>
+
+		<mwf:PaginateResult editableRegion="paginate" id="paginate" pageLength="15" skin="paginate.html" />
+	</mvc:State>
+
+	<mvc:State name="detail">
+		<glz:Modifier target="Page" attribute="templateFileName" value="detail.php" />
+
+		<glz:EmptyComponent id="back" skin="backButton_detail.html" editableRegion="buttons"/>
+		<glz:JSscript folder="metacms/modules/solr/js"/>
+		<solr:SearchType id="searchType" editableRegion="filters" skin="searchType.html"/>
+
+		<solr:Detail id="detail" skin="OpacDetail.html" mediaType="sbn"/>
+	</mvc:State>
+
+	<mvc:State name="detailiccd">
+		<glz:Modifier target="Page" attribute="templateFileName" value="detail.php" />
+
+		<glz:EmptyComponent id="back" skin="backButton_detail.html" editableRegion="buttons"/>
+
+		<glz:JSscript folder="metacms/modules/solr/js"/>
+
+		<solr:SearchType id="searchType" editableRegion="filters" skin="searchType.html" section="patrimonio"/>
+
+		<solr:Detail id="detail" skin="OpacDetail.html" solrUrl="metacms.iccd.detail.url" mediaType="iccd"/>
+	</mvc:State>
+
+	<mvc:State name="detailarchive">
+		<glz:Modifier target="Page" attribute="templateFileName" value="detail.php" />
+
+		<glz:EmptyComponent id="back" skin="backButton_detail.html" editableRegion="buttons"/>
+		<arc:Breadcrumbs id="archiveBreadcrumbs" skin="archiveBreadcrumbs.html" editableRegion="breadcrumbs" />
+		<glz:JSscript folder="metacms/modules/solr/js"/>
+		<glz:Hidden id="id" value=""/>
+		<glz:Hidden id="parentId" value=""/>
+
+		<glz:Panel editableRegion="filters" cssClass="module-column mcp-module-column-aside-search w-all-wm-xxl  no-gutter bw-f w-1-3">
+			<solr:SearchType id="searchType" skin="searchType_archive_s.html" section="archivi"/>
+			<glz:EmptyComponent id="gerarchia" skin="gerarchia.html"/>
+		</glz:Panel>
+
+		<arc:Tree id="treeview" startId="0" title="" controllerName="metafad.archive.controllers.Gerarchia"/>
+
+		<glz:JSscript folder="metafad/archive/js"/>
+
+		<solr:Detail id="detail" skin="OpacDetail.html" solrUrl="metacms.archive-ca.detail.url" detailType="archive"/>
+	</mvc:State>
+
+	<mvc:State name="detailarchiveud">
+		<glz:Modifier target="Page" attribute="templateFileName" value="detail.php" />
+
+		<glz:EmptyComponent id="back" skin="backButton_detail.html" editableRegion="buttons"/>
+		<arc:Breadcrumbs id="archiveBreadcrumbs" skin="archiveBreadcrumbs.html" editableRegion="breadcrumbs" />
+		<glz:JSscript folder="metacms/modules/solr/js"/>
+		<glz:Hidden id="id" value=""/>
+		<glz:Hidden id="parentId" value=""/>
+
+		<glz:Panel editableRegion="filters" cssClass="module-column mcp-module-column-aside-search w-all-wm-xxl  no-gutter bw-f w-1-3">
+			<solr:SearchType id="searchType" skin="searchType_archive_s.html" section="archivi"/>
+			<glz:EmptyComponent id="gerarchia" skin="gerarchia.html"/>
+		</glz:Panel>
+
+		<arc:Tree id="treeview" startId="0" title="" controllerName="metafad.archive.controllers.Gerarchia"/>
+
+		<glz:JSscript folder="metafad/archive/js"/>
+
+		<solr:Detail id="detail" skin="OpacDetail.html" solrUrl="metacms.archive-ud.detail.url" mediaType="archive" detailType="archive" unit="true"/>
+	</mvc:State>
+
+	<mvc:State name="detailaut">
+		<glz:Modifier target="Page" attribute="templateFileName" value="detail.php" />
+
+		<glz:Panel editableRegion="filters" cssClass="module-column mcp-module-column-aside-search padding-top w-all-wm-xxl  no-gutter bw-f w-1-3">
+			<solr:SearchType id="searchType" skin="searchType_aut.html" section="metaindiceau"/>
+			<solr:Roles id="roles" skin="opac_roles.html"/>
+		</glz:Panel>
+
+		<glz:EmptyComponent id="back" skin="backButton_detail.html" editableRegion="buttons"/>
+		<glz:JSscript folder="metacms/modules/solr/js"/>
+		<solr:Detail id="detail" skin="OpacDetail.html" solrUrl="metacms.opac-au.detail.url"/>
+	</mvc:State>
+
+	<mvc:State name="detailiccdaut">
+		<glz:Modifier target="Page" attribute="templateFileName" value="detail.php" />
+
+		<glz:Panel editableRegion="filters" cssClass="module-column mcp-module-column-aside-search padding-top w-all-wm-xxl  no-gutter bw-f w-1-3">
+			<solr:Roles id="roles" skin="opac_roles.html" type="iccd"/>
+		</glz:Panel>
+
+		<glz:EmptyComponent id="back" skin="backButton_detail.html" editableRegion="buttons"/>
+		<glz:JSscript folder="metacms/modules/solr/js"/>
+		<solr:Detail id="detail" skin="OpacDetail.html" solrUrl="metacms.iccd-au.detail.url"/>
+	</mvc:State>
+
+	<mvc:State name="detailarchiveaut">
+		<glz:Modifier target="Page" attribute="templateFileName" value="detail.php" />
+
+		<glz:Panel editableRegion="filters" cssClass="module-column mcp-module-column-aside-search padding-top w-all-wm-xxl  no-gutter bw-f w-1-3">
+			<solr:Roles id="roles" skin="opac_roles.html" type="archive"/>
+		</glz:Panel>
+
+		<glz:EmptyComponent id="back" skin="backButton_detail.html" editableRegion="buttons"/>
+		<glz:JSscript folder="metacms/modules/solr/js"/>
+		<solr:Detail id="detail" skin="OpacDetail.html" solrUrl="metacms.archivio-au.detail.url" detailType="archive"/>
+		<glz:JSscript folder="metafad/archive/js"/>
+	</mvc:State>
+
+</mvc:Page>

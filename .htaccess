@@ -1,0 +1,28 @@
+<FilesMatch "^(composer\.(json|lock))$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+  </IfModule>
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(ajax\.php|feed\.php|static/|cache/|favicon\.ico|oaipmh/) - [L]
+
+    RewriteRule ^application/.*\.js - [L]
+    RewriteRule ^application/mediaArchive - [L]
+    RewriteRule ^application(/|$) - [F,NC]
+    RewriteRule ^vendor(/|$) - [F,NC]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^dam/(.*)$ rest.php?$1 [QSA,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^rest/(.*)$ rest.php?$1 [QSA,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pageTypes>
+   <pageType label="AdvancedSearch" name="AdvancedSearch" class="button-generic" />
+   <pageType label="Alias" name="Alias" class="button-generic" />
+   <pageType label="CarrelloPopup" name="CarrelloPopup" class="button-generic" />
+   <pageType label="DetailPopup" name="DetailPopup" class="button-generic" />
+   <pageType label="Empty" name="Empty" class="button-generic" />
+   <pageType label="Home" name="Home" class="button-generic" />
+   <pageType label="Login" name="Login" class="button-generic" />
+   <pageType label="LostPassword" name="LostPassword" class="button-generic" />
+   <pageType label="Metafad" name="Metafad" class="button-generic" />
+   <pageType label="Page" name="Page" class="button-generic" />
+   <pageType label="Registration" name="Registration" class="button-generic" />
+   <pageType label="Requests" name="Requests" class="button-generic" />
+   <pageType label="Search" name="Search" class="button-generic" />
+   <pageType label="Services" name="Services" class="button-generic" />
+   <pageType label="UserDetails" name="UserDetails" class="button-generic" />
+   <pageType label="Viewer" name="Viewer" class="button-generic" />
+</pageTypes>

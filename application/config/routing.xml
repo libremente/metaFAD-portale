@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glz:Routing>
+	<glz:Route method="GET" value="rest/metasearch" controller="metafad.rest.controllers.Metasearch" />
+	<glz:Route name="link-login" value="rest/login" controller="metafad.controllers.rest.login.Login" method="POST"/>
+	<glz:Route name="viewer-service" value="rest/viewer/metadato/{value=id}" controller="metafad.viewer.controllers.rest.Viewer" method="GET"/>
+
+    <glz:Route name="redirect" value="go/{value=module}/{value=id}" controller="museoweb.controllers.cms.Redirect" skipLanguage="true"/>
+
+    <glz:Route name="collections" value="{pageId=metafad.modules.collections.views.FrontEnd}" />
+    <glz:Route name="collections_detail" value="{pageId=metafad.modules.collections.views.FrontEnd}/{static=action=show}/{integer=document_id}/{value=title}" />
+
+    <glz:Route name="registration" value="{pageId=registration}" />
+    <glz:Route name="lostpassword" value="{pageId=lostpassword}" />
+    <glz:Route name="userdetails" value="{pageId=userdetails}" />
+    <glz:Route name="logout" value="logout" pageId="login" action="logout" />
+
+    <glz:Route name="solr_addfacet" value="{pageId}/solr/{facetAction=add}" />
+    <glz:Route name="solr_removefacet" value="{pageId}/solr/{facetAction=remove}" />
+    <glz:Route name="solr_search" value="{pageId=Search}/" />
+    <glz:Route name="solr_search_iccd" value="{pageId=Search}/{action=iccd}/" />
+    <glz:Route name="solr_search_archive" value="{pageId=Search}/{action=archive}/" />
+    <glz:Route name="solr_search_archive_ud" value="{pageId=Search}/{action=archiveud}/" />
+    <glz:Route name="solr_search_metaindice" value="{pageId=Search}/{action=metaindice}/" />
+    <glz:Route name="solr_search_metaindice_au" value="{pageId=Search}/{action=metaindiceau}/" />
+    <glz:Route name="solr_advancedSearch" value="{pageId=AdvancedSearch}/{value=action}/" />
+
+    <glz:Route name="request" value="{pageId=Requests}/{value=action}/{value=type}/{value=id}/" />
+
+    <glz:Route name="opac_detail" value="{pageId=Search}/{action=detail}/{value=id}/" />
+    <glz:Route name="iccd_detail" value="{pageId=Search}/{action=detailIccd}/{value=id}/" />
+    <glz:Route name="archive_detail" value="{pageId=Search}/{action=detailarchive}/{value=id}/" />
+    <glz:Route name="archive_detail_ud" value="{pageId=Search}/{action=detailarchiveud}/{value=id}/" />
+
+    <glz:Route name="opac_detail_au" value="{pageId=Search}/{action=detailaut}/{value=id}/" />
+    <glz:Route name="iccd_detail_au" value="{pageId=Search}/{action=detailiccdaut}/{value=id}/" />
+    <glz:Route name="archive_detail_au" value="{pageId=Search}/{action=detailarchiveaut}/{value=id}/" />
+
+    <glz:Route name="opac_detail_popup" value="{pageId=DetailPopup}/{action=detail}/{value=id}/" />
+    <glz:Route name="opac_detail_au_popup" value="{pageId=DetailPopup}/{action=detailaut}/{value=id}/" />
+    <glz:Route name="archive_detail_au_popup" value="{pageId=DetailPopup}/{action=detailarchiveaut}/{value=id}/" />
+    <glz:Route name="iccd_detail_au_popup" value="{pageId=DetailPopup}/{action=detailiccdaut}/{value=id}/" />
+
+    <glz:Route name="services" value="{pageId=Services}/{action=login}" />
+    <glz:Route name="linkChangeAction" value="{pageId}/{pageTitle}/{value=action}" />
+    <glz:Route name="link" value="{pageId}/{pageTitle}" />
+
+	<glz:Route name="ecommerce_popup" value="{pageId=CarrelloPopup}/{pageTitle}" />
+
+</glz:Routing>

@@ -1,0 +1,55 @@
+<div class="module-parallax js-anchor-step2 gcp-bg-ct5 js-detect-window-min-height">
+    <div class="mcp-module-heading-parallax-section content-align-right padding-right">
+         <h1 class="block-title gcp-text-weight-300 gcp-super-title">I nuovi documenti</h1>
+    </div>
+    <div class="mcp-module-parallax-content clearfix">
+      <section class="module-list-archive w-2-3 clearfix bw-f last pull-right">
+          <div class="slider my-single-dots-slider slick-have-dots slick-dots-align-right">
+              <div tal:repeat="item Component/newDoc" class="slide">
+                  <div tal:repeat="item2 item" class="module-column bw-f w-2-4 no-gutter">
+                      <article tal:repeat="item3 item2" class="block-item-post clearfix list" style="padding-right: 10px;">
+                          <div class="gcp-wrapper-figure pull-left">
+                              <figure class="gcp-wrapper-img gcp-bg-CCCCCC">
+                                   <a tal:condition="php: item3.visibility != 'r'" tal:attributes="href php: __Link::makeUrl('link', array('pageId'=> 'Viewer' )) . '#/main/viewer?idMetadato=' . item3.id . '&type=' . item3.type"><img tal:attributes="data-lazy item3/firstImage" alt="" /></a>
+                                   <img tal:condition="php: item3.visibility == 'r'" tal:attributes="data-lazy item3/firstImage" alt="" />
+                              </figure>
+                          </div>
+                          <h1 class="block-title">
+                            <span tal:condition="php: item3.type == 'archive'" tal:omit-tag="">
+                              <a tal:attributes="href php: __Link::makeUrl('archive_detail_ud', array('id'=> item3.id ))" tal:content="item3/titolo" style="cursor:initial;">Senza titolo</a>
+                              <a tal:attributes="href php: __Link::makeUrl('archive_detail_ud', array('id'=> item3.id ))" tal:condition="php: !item3.titolo" style="cursor:initial;"></a>
+                            </span>
+                            <span tal:condition="php: item3.type == 'iccd'" tal:omit-tag="">
+                              <a tal:attributes="href php: __Link::makeUrl('iccd_detail', array('id'=> item3.id ))" tal:content="item3/titolo" style="cursor:initial;">Senza titolo</a>
+                              <a tal:attributes="href php: __Link::makeUrl('iccd_detail', array('id'=> item3.id ))" tal:condition="php: !item3.titolo" style="cursor:initial;"></a>
+                            </span>
+                            <span tal:condition="php: item3.type == 'sbn'" tal:omit-tag="">
+                              <a tal:attributes="href php: __Link::makeUrl('opac_detail', array('id'=> item3.id ))" tal:content="item3/titolo" style="cursor:initial;">Senza titolo</a>
+                              <a tal:attributes="href php: __Link::makeUrl('opac_detail', array('id'=> item3.id ))" tal:condition="php: !item3.titolo" style="cursor:initial;"></a>
+                            </span>
+                          </h1>
+                          <p tal:condition="item3/descrizione"><span tal:omit-tag="" tal:content="structure php: substr( item3.descrizione , 0 , 130)"></span><span tal:omit-tag="" tal:condition="php: strlen( item3.descrizione ) > 130">...</span></p><p tal:condition="php: !item3.descrizione">Nessuna descrizione</p>
+                      </article>
+                   </div>
+               </div>
+           </div>
+          <script>
+               $(document).ready(function() {
+                     $('.my-single-dots-slider').slick({
+                         autoplay: true,
+                         dots: true,
+                         autoplaySpeed: 10000,
+                         infinite: true,
+                         arrows: false,
+                         speed:3000,
+                         slidesToScroll: 1
+                     });
+               });
+          </script>
+      </section>
+    </div>
+    <div class="bcp-parallax-slide-controller">
+       <a class="js-go-to-step1 bcp-btn-slide-controller" ><span class="icon-arrowup12231"></span></a>
+       <a class="js-go-to-step3 bcp-btn-slide-controller" ><span class="icon-arrowdown12231"></span></a>
+    </div>
+</div>

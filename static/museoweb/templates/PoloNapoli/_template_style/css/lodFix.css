@@ -1,0 +1,108 @@
+/* BEGIN LOD */
+html {
+  font-size: 16px !important;
+}
+body {
+  font-family: 'Open Sans', sans-serif !important;
+}
+#header {
+  min-height: 107px !important;
+}
+.backButton {
+  padding-bottom: 3px;
+}
+.js-show-element:hover {
+  color: #fff !important;
+}
+.gcp-btn-controller-child:hover {
+  color: #fff !important;
+}
+.bcp-block-dropdown-content--catalogue label {
+  font-weight: normal !important;
+}
+.bcp-block-search-feature label {
+  font-weight: normal !important;
+}
+#lod .content-view {
+  overflow: visible!important;
+}
+#lod .content-viewType {
+  padding-left: 20px;
+}
+#lod .metaHeaderSearch block-btn-search {
+  padding-left: 15px;
+}
+#lod .content-search .content-options {
+  border-bottom: none;
+  padding: 0 10px;
+}
+#lod .content-search .table-search-th {
+  border: none!important;
+  padding-right: 10px!important;
+  padding-left: 10px!important;
+}
+#lod .content-search .table-search-th .content-cell {
+  margin-right: 0!important;
+  margin-left: 0!important;
+}
+#lod .content-search .table-search-content {
+  padding: 0 10px;
+  overflow: visible!important;
+}
+#lod .table-search.table-search-rows .table-search-tr {
+  position: relative;
+  right: 10px;
+  padding-left: 10px;
+}
+.fulltext-state .content-classicView .table-search-rows {
+  overflow: auto!important;
+  position: relative;
+  right: -5px;
+}
+.fulltext-state .content-listView .content-listViewSearch .content-singleSearch.content-search-o,
+.fulltext-state .content-listView .content-listViewSearch .content-singleSearch.content-search-details {
+  overflow: auto!important;
+}
+@media screen and (max-width: 768px) {
+  #lod .notinizialized-state {
+    margin-top: -150px;
+  }
+}
+@media screen and (max-width: 670px) {
+  #lod .notinizialized-state {
+    margin-top: -180px;
+  }
+  #lod .content-search .table-search-content {
+    margin-top: 70px!important;
+  }
+  .fulltext-state {
+    /*.block-pagination {
+			float: none!important;
+			.block-paging {
+				margin-left: 0!important;
+			}
+		}*/
+  }
+  .fulltext-state .content-listView .content-options .block-pagination {
+    float: none!important;
+  }
+  .fulltext-state .content-listView .content-options .block-pagination .block-paging {
+    margin-left: 0!important;
+  }
+  .fulltext-state .content-listView .content-listViewSearch {
+    top: 55px;
+  }
+  .fulltext-state .content-listView .content-historyPagination {
+    left: 10px!important;
+    top: -35px !important;
+  }
+}
+@media screen and (max-width: 570px) {
+  .fulltext-state .block-pagination {
+    float: none!important;
+  }
+  .fulltext-state .block-pagination .block-paging {
+    margin-left: 0!important;
+  }
+}
+/*END LOD */

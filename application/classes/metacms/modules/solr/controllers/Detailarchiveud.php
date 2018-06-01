@@ -1,0 +1,5 @@
+<?php
+class metacms_modules_solr_controllers_Detailarchiveud extends metacms_modules_solr_controllers_Detailarchive
+{
+
+}

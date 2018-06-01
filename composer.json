@@ -1,0 +1,20 @@
+{
+  "name": "poloDigitaleNapoli/portale",
+  "description": "Polo Digitale Napoli - Portale",
+  "license": "MIT",
+  "require": {
+    "gregwar/captcha": "^1.1"
+  },
+  "require-dev": {
+  },
+  "scripts": {
+      "clear-cache": [
+          "rm -rf cache/*.php",
+          "rm -rf admin/cache/*.php",
+          "rm -rf cache/*.jpg",
+          "rm -rf admin/cache/*.jpg",
+          "rm -rf cache/*.js",
+          "rm -rf admin/cache/*.js"
+      ]
+    }
+}

@@ -1,0 +1,36 @@
+/* FIX POPUP CARRELLO */
+body{
+  background-color: #fff !important;
+  overflow: auto;
+}
+.block-text.block-text-no-background p{
+  font-size: 12px !important;
+}
+.block-heading-red h2{
+  padding-bottom: 0px;
+}
+.bcp-block-note div p{
+  font-size: 12px !important;
+}
+.bcp-block-note label span{
+  font-size: 14px !important;
+}
+#messageSuccess{
+  width: 100%;
+  background: #eee;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  color: #600;
+  text-decoration: underline;
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin-bottom: 0px !important;
+}
+#requestInfo h1{
+  text-align: left !important;
+}
+.button.btn-ct10{
+  margin-top: 10px;
+}

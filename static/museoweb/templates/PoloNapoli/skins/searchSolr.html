@@ -1,0 +1,138 @@
+<div class="module-main-search mcp-module-main-search-header clearfix">
+
+    <!-- block-form -->
+    <div class="block-form">
+        <form method="get" tal:attributes="action php: __Link::makeUrl('solr_search_metaindice')">
+
+            <!-- block-row-field -->
+            <div class="block-row-field clearfix">
+                <div class="block-field bw-f no-gutter w-2-4">
+                    <p>
+                      <input type="text" placeholder="Cerca..." name="search" tal:attributes="value php: (__Request::get('search') !== '*' AND __Request::get('search') !== '**') ? __Request::get('search') : '' " />
+                      <input class="button" type="submit" value="Cerca" />
+                      <span class="icon-search"></span>
+                    </p>
+                </div>
+
+                <!-- block-field -->
+                <div class="block-field w-1-4 bw-f last no-gutter">
+
+                    <!-- bcp-block-checkbox -->
+                    <div class="bcp-block-dropdown bg-ct2">
+
+                        <a class="js-show-element js-catalogues bcp-block-dropdown-btn">Cataloghi</a>
+
+                        <!-- bcp-block-dropdown-content -->
+                        <div class="js-collapse-box bg-ct2 bcp-block-dropdown-content clearfix bcp-block-dropdown-content--catalogue hidden">
+
+                            <!-- bcp-block-search-feature -->
+                            <div class="bw-f w-2-4 bcp-block-search-feature">
+                                <ul>
+                                    <li>
+                                        <a class="gcp-btn-controller-child" tal:attributes="href php: __Link::makeUrl('solr_advancedSearch',array('action'=>'metaindice')) .'?mask=Ricerca semplice&amp;digitale=true';">documenti digitali</a>
+                                    </li>
+                                    <li tal:condition="php: in_array(__Session::get('instituteKey'),array('istituto-italiano-per-gli-studi-storici','societa-napoletana-di-storia-patria',null))"><input class="alldigital" type="checkbox" name="libri" value="true" /> <label>libri</label></li>
+                                    <li tal:condition="php: in_array(__Session::get('instituteKey'),array('societa-napoletana-di-storia-patria',null))"><input class="alldigital" type="checkbox" name="manoscritti" value="true" /> <label>manoscritti</label></li>
+                                    <li tal:condition="php: in_array(__Session::get('instituteKey'),array('societa-napoletana-di-storia-patria',null))"><input class="alldigital" type="checkbox" name="grafica" value="true" /> <label>grafica</label></li>
+                                    <li tal:condition="php: in_array(__Session::get('instituteKey'),array('pio-monte-della-misericordia',null))"><input class="alldigital" type="checkbox" name="operadarte" value="true" /> <label>opere d'arte</label></li>
+                                    <li tal:condition="php: __Session::get('instituteKey') != 'istituto-italiano-per-gli-studi-storici'"><input class="alldigital" type="checkbox" name="documenti" value="true" /> <label>documenti d'archivio</label></li>
+                                </ul>
+                            </div>
+                            <!-- bcp-block-search-feature -->
+
+                            <!-- bcp-block-search-feature -->
+                            <div class="bw-f w-2-4 last bcp-block-search-feature">
+                                <ul>
+                                    <li>
+                                      <a class="gcp-btn-controller-child" tal:attributes="href php: __Link::makeUrl('solr_advancedSearch',array('action'=>'metaindice')) .'?mask=Ricerca semplice';">cataloghi</a>
+                                    </li>
+                                    <li tal:condition="php: __Session::get('instituteKey') != 'istituto-italiano-per-gli-studi-storici'"><input class="allcatalogues" type="checkbox" name="archivistico" value="true" /> <a tal:attributes="href php: __Link::makeUrl('solr_advancedSearch',array('action'=>'archive')) .'?mask=Ricerca avanzata CA';" class="gcp-btn-controller-child">archivistico</a></li>
+                                    <li tal:condition="php: in_array(__Session::get('instituteKey'),array('pio-monte-della-misericordia','societa-napoletana-di-storia-patria',null))"><input class="allcatalogues" type="checkbox" name="patrimonio" value="true" /> <a tal:attributes="href php: __Link::makeUrl('solr_advancedSearch',array('action'=>'iccd')) .'?mask=Ricerca semplice';" class="gcp-btn-controller-child">storico-artistico</a></li>
+                                    <li><input class="allcatalogues" type="checkbox" name="bibliografico" value="true" /> <a tal:attributes="href php: __Link::makeUrl('solr_advancedSearch',array('action'=>'index')) .'?mask=Ricerca semplice';" class="gcp-btn-controller-child">bibliografico</a></li>
+                                </ul>
+                            </div>
+                            <!-- bcp-block-search-feature -->
+
+                        </div>
+                        <!-- bcp-block-dropdown-content -->
+
+                    </div>
+                    <!-- bcp-block-checkbox -->
+
+                </div>
+                <!-- block-field -->
+
+                <!-- block-field -->
+                <div class="block-field w-1-4 bw-f last no-gutter">
+
+                    <!-- bcp-block-checkbox -->
+                    <div class="bcp-block-dropdown bg-ct2">
+
+                        <a class="js-show-element js-authorities bcp-block-dropdown-btn">Authorities</a>
+
+                        <!-- bcp-block-dropdown-content -->
+                        <div class="js-collapse-box bg-ct2 bcp-block-dropdown-content clearfix hidden">
+
+                            <!-- bcp-block-search-feature -->
+                            <div class="bw-f w-4-4 bcp-block-search-feature clearfix">
+                            <ul>
+                                <li>
+                                    <a tal:attributes="href php: __Link::makeUrl('solr_advancedSearch',array('action'=>'metaindiceau')) .'?mask=Ricerca semplice';" class="gcp-btn-controller-child">tutte le entit&agrave;</a>
+                                </li>
+                                <li><input class="allaut" type="checkbox" name="enti" value="true" /> <label>enti</label></li>
+                                <li><input class="allaut" type="checkbox" name="persone" value="true" /> <label>persone</label></li>
+                                <li><input class="allaut" type="checkbox" name="famiglie" value="true" /> <label>famiglie</label></li>
+                            </ul>
+                            </div>
+                            <!-- bcp-block-search-feature -->
+
+                        </div>
+                        <!-- bcp-block-dropdown-content -->
+
+                    </div>
+                    <!-- bcp-block-checkbox -->
+
+                </div>
+                <!-- block-field -->
+
+            </div>
+            <!-- block-row-field -->
+
+        </form>
+    </div>
+    <!-- block-form -->
+
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.allcatalogues').on('click',function(){
+      $('.alldigital').prop('checked', false);
+      $('.allaut').prop('checked', false);
+    });
+
+    $('.alldigital').on('click',function(){
+      $('.allcatalogues').prop('checked', false);
+      $('.allaut').prop('checked', false);
+    });
+
+    $('.allaut').on('click',function(){
+      $('.alldigital').prop('checked', false);
+      $('.allcatalogues').prop('checked', false);
+    });
+
+    $('.js-authorities').on('click',function(){
+      if($('.js-catalogues').hasClass('active'))
+      {
+        $('.js-catalogues').click();
+      }
+    });
+
+    $('.js-catalogues').on('click',function(){
+      if($('.js-authorities').hasClass('active'))
+      {
+        $('.js-authorities').click();
+      }
+    })
+  });
+</script>

@@ -1,0 +1,14 @@
+<div class="module-column mcp-module-column-aside-search gutter-top-large w-all-wm-xxl  no-gutter bw-f w-1-3">
+   <!-- bcp-block-list-tab -->
+   <div class="bcp-block-list-tab">
+         <ul>
+             <li tal:condition="php: Component['menu']" tal:repeat="item Component/menu">
+               <a tal:attributes="class php: (item['active']) ? 'active' : ''; href php: item['url']">
+                 <span tal:omit-tag="" tal:content="item/text"></span>
+                 <span class="icon-angle-right"></span>
+               </a>
+             </li>
+         </ul>
+   </div>
+   <!-- bcp-block-list-tab -->
+</div>

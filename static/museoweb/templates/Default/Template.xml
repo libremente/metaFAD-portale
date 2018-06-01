@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glz:EmptyComponent>
+    <glz:Resources>
+		<glz:js src="{path:APPLICATION_TEMPLATE}ita-web-toolkit/build/vendor/modernizr.js" editableRegion="headMetafad" />
+        <glz:css src="{path:APPLICATION_TEMPLATE}ita-web-toolkit/build/build.css" editableRegion="headMetafad" />
+        <glz:js src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" editableRegion="headMetafad" />
+		<glz:js src="http://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js" editableRegion="headMetafad" />
+
+        <glz:js src="{path:APPLICATION_TEMPLATE}ita-web-toolkit/build/IWT.min.js" editableRegion="tail" />
+		<glz:js src="{path:APPLICATION_TEMPLATE}ita-web-toolkit/build/0.chunk.js" editableRegion="tail" />
+        <glz:js src="{path:APPLICATION_TEMPLATE}js/_main.js" editableRegion="tail" />
+		<glz:js src="{path:APPLICATION_TEMPLATE}js/ecommerce.js" editableRegion="tail" />
+		<glz:css src="{path:APPLICATION_TEMPLATE}css/customStyles.css" editableRegion="headMetafad" />
+		<glz:css src="{path:APPLICATION_TEMPLATE}css/stylesViewer.css" editableRegion="headMetafad" />
+	</glz:Resources>
+
+</glz:EmptyComponent>

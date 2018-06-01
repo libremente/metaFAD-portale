@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../../font/iconmoon-viewer/icomoon.eot?g86api');
+  src: url('../../font/iconmoon-viewer/icomoon.eot?g86api#iefix') format('embedded-opentype'), url('../../font/iconmoon-viewer/icomoon.ttf?g86api') format('truetype'), url('../../font/iconmoon-viewer/icomoon.woff?g86api') format('woff'), url('../../font/iconmoon-viewer/icomoon.svg?g86api#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-vw-double-page:before {
+  content: "\e900";
+}
+.icon-vw-vertical-page:before {
+  content: "\e901";
+}
+.icon-vw-align-left:before {
+  content: "\e902";
+}
+.icon-vw-folder:before {
+  content: "\e903";
+}
+.icon-vw-arrow-down:before {
+  content: "\e904";
+}
+.icon-vw-arrow-up:before {
+  content: "\e905";
+}
+.icon-vw-rotate-right:before {
+  content: "\e906";
+}
+.icon-vw-undo:before {
+  content: "\e907";
+}
+.icon-vw-expand:before {
+  content: "\e908";
+}
+.icon-vw-search-plus:before {
+  content: "\e909";
+}
+.icon-vw-search-minus:before {
+  content: "\e90a";
+}
+.icon-vw-share:before {
+  content: "\e90b";
+}
+.icon-vw-file:before {
+  content: "\e90c";
+}
+.icon-vw-th:before {
+  content: "\e90d";
+}
+.icon-vw-shopping-cart:before {
+  content: "\e90e";
+}
+.icon-vw-download:before {
+  content: "\e90f";
+}
+.icon-vw-file-view:before {
+  content: "\e910";
+}
+.icon-vw-text:before {
+  content: "\e911";
+}
+.icon-vw-info-circle:before {
+  content: "\e912";
+}
+.icon-vw-list:before {
+  content: "\e913";
+}
+.icon-vw-angle-left:before {
+  content: "\e914";
+}
+.icon-vw-angle-right:before {
+  content: "\e915";
+}
+.icon-vw-angle-double-left:before {
+  content: "\e916";
+}
+.icon-vw-angle-double-right:before {
+  content: "\e917";
+}

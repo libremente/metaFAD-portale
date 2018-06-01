@@ -1,0 +1,86 @@
+<div id="collectionSlider" class="module-parallax js-anchor-step1 gcp-bg-ct4 js-detect-window-min-height">
+
+  <div class="mcp-module-heading-parallax-section content-align-right padding-right">
+    <h1 class="block-title gcp-text-weight-300 gcp-super-title">Le collezioni digitali</h1>
+  </div>
+
+  <div class="mcp-module-parallax-content mcp-module-parallax-content--collection padding-right clearfix">
+    <div class="slider slider-for">
+      <div tal:repeat="item Component/firstCollections" >
+        <section class="module-list-archive w-2-3 clearfix bw-f last pull-right">
+          <article tal:repeat="item2 item" tal:attributes="class php: (repeat.item2.end) ? 'block-item-post last grid w-1-3 bw-f' : 'block-item-post grid w-1-3 bw-f' ">
+            <div class="gcp-wrapper-figure">
+              <figure class="gcp-wrapper-img gcp-bg-FFF0C4">
+                <a tal:attributes="href php: __Link::makeUrl('collections_detail',array('document_id'=>item2['id']))"><img style="margin:auto;" tal:attributes="data-lazy item2/image" alt="" /></a>
+              </figure>
+            </div>
+            <h1 class="block-title"><a tal:attributes="href php: __Link::makeUrl('collections_detail',array('document_id'=>item2['id']))" tal:content="item2/title"></a></h1>
+            <h2 class="block-sub-title" tal:content="item2/description"></h2>
+          </article>
+        </section>
+      </div>
+    </div>
+    <div class="module-row clearboth">
+      <div class="module-column bw-f w-1-3">
+        <a class="btn-link gpc-btn-link-go-to-archive" tal:attributes="href Component/firstCollectionLink">Vedi tutte le collezioni +</a>
+      </div>
+      <div class="module-column bw-f w-2-3 last">
+        <div class="mcp-module-wrapper-thumbnail slider slider-nav slider-collection">
+          <div tal:repeat="item Component/subCollections" class="mcp-module-thumbnail-img-set w-1-3 bw-f">
+            <section tal:attributes="class php: (repeat.item.start) ? 'bcp-block-img-tris clearfix' : 'bcp-block-img-tris clearfix' ">
+              <article tal:repeat="item2 item" class="block-item-post grid w-1-3 bw-f">
+                <div class="gcp-wrapper-figure">
+                  <figure class="gcp-wrapper-img">
+                    <a tal:attributes="href php: __Link::makeUrl('collections_detail',array('document_id'=>item2['id']))"><img tal:attributes="data-lazy item2/imageThumbnail" alt="" /></a>
+                  </figure>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bcp-parallax-slide-controller">
+    <a class="js-go-to-step0 bcp-btn-slide-controller" ><span class="icon-arrowup12231"></span></a>
+    <a class="js-go-to-step2 bcp-btn-slide-controller" ><span class="icon-arrowdown12231"></span></a>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+     $('#collectionSlider').find('.mcp-module-thumbnail-img-set').eq(0).addClass('slick-selected');
+
+     $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav',
+        infinite: true,
+        speed: 3000,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        onBeforeChange: function (event, slick, currentSlide, nextSlide) {
+            if(event.slideCount == event.currentSlide + 1) {
+              var mySlideNumber = 0;
+            }
+            else {
+              var mySlideNumber = event.currentSlide + 1;
+            }
+            $('.slick-selected').removeClass('slick-selected');
+            $('#collectionSlider').find('.mcp-module-thumbnail-img-set').eq(mySlideNumber).addClass('slick-selected');
+          }
+      });
+      $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: false,
+        focusOnSelect: true,
+        draggable: false
+      });
+    });
+  </script>
+</div>

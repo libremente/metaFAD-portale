@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mvc:Page id="Page"
+	xmlns:glz="http://www.glizy.org/dtd/1.0/"
+	xmlns:mvc="org.glizy.mvc.components.*"
+	templateType="php"
+	templateFileName="page.php"
+	defaultEditableRegion="content"
+	adm:editComponents="responsabile,menuVoice1,menuVoice2,menuVoice3,projectTitle,projectText,groupTitle,groupText,reservedTitle,reservedAreaText,requestText"
+	controllerName="metafad.controllers.*">
+	<glz:Import src="Common.xml" />
+	<glz:Modifier target="searchSections" attribute="visible" value="false"/>
+	<glz:Text id="responsabile" label="{i18n:Responsabile}" visible="false" adm:required="true"/>
+
+	<glz:Text id="menuVoice1" label="{i18n:Voce men&#249; progetto}" adm:required="true" visible="false"/>
+	<glz:Text id="menuVoice2" label="{i18n:Voce men&#249; gruppo}" adm:required="true" visible="false"/>
+	<glz:Text id="menuVoice3" label="{i18n:Voce men&#249; area riservata}" adm:required="true" visible="false"/>
+
+	<mvc:State name="index">
+		<glz:Text id="projectTitle" label="{i18n:Titolo pagina progetto}" adm:required="true" skin="metafadSectionTitle.html"/>
+		<glz:EmptyComponent id="back" skin="backButton.html" editableRegion="buttons"/>
+		<glz:EmptyComponent id="navigation" editableRegion="filters" skin="metafadNavigation.html" />
+		<glz:LongText id="projectText" label="{i18n:Testo progetto}" adm:rows="20" adm:cols="75" adm:htmlEditor="true" forceP="true" adm:required="true" skin="longText.html"/>
+	</mvc:State>
+
+	<mvc:State name="group">
+		<glz:Text id="groupTitle" label="{i18n:Titolo pagina gruppo}" adm:required="true" skin="metafadSectionTitle.html"/>
+		<glz:EmptyComponent id="back" skin="backButton.html" editableRegion="buttons"/>
+		<glz:EmptyComponent id="navigation" editableRegion="filters" skin="metafadNavigation.html" />
+		<glz:LongText id="groupText" label="{i18n:Testo gruppo di lavoro}" adm:rows="20" adm:cols="75" adm:htmlEditor="true" forceP="true" adm:required="true" skin="longText.html" />
+	</mvc:State>
+
+	<mvc:State name="reserved">
+		<glz:Text id="reservedTitle" label="{i18n:Titolo pagina area riservata}" adm:required="true" skin="metafadSectionTitle.html"/>
+		<glz:EmptyComponent id="back" skin="backButton.html" editableRegion="buttons"/>
+		<glz:EmptyComponent id="navigation" editableRegion="filters" skin="metafadNavigation.html" />
+		<glz:LongText id="reservedAreaText" label="{i18n:Testo area riservata}" adm:rows="20" adm:cols="75" adm:htmlEditor="true" forceP="true" adm:required="true" skin="longText.html" />
+
+		<glz:Form id="reservedareaemail" cssClass="module-main-search--opac form-reserved-area">
+			<glz:Input id="name" cssClassLabel="" label="{i18n:MW_USER_NAME}" maxLength="50" required="true" validationType="not_empty" />
+			<glz:Input id="surname" cssClassLabel="" label="{i18n:MW_USER_SURNAME}" maxLength="50" required="true" validationType="not_empty" />
+			<glz:Input id="email" cssClassLabel="" label="{i18n:Email personale}" maxLength="50" required="true" validationType="email" />
+			<glz:Input id="company" cssClassLabel="" label="{i18n:Ente/Azienda}" maxLength="50" required="true" validationType="not_empty" />
+			<glz:Input id="companynumber" cssClassLabel="" label="{i18n:Telefono ente/azienda}" maxLength="50" required="true" validationType="not_empty" />
+			<glz:Input id="companyemail" cssClassLabel="" label="{i18n:Mail ente/azienda}" maxLength="50" required="true" validationType="email" />
+			<glz:Input id="companynation" cssClassLabel="" label="{i18n:Nazione ente/azienda}" maxLength="50" required="true" validationType="not_empty" />
+			<glz:Input id="motivation" type="multiline" cssClassLabel="" label="{i18n:Motivazione}" wrap="on" rows="5" maxLength="500" required="true" validationType="not_empty" />
+
+			<glz:EmptyComponent id="captchaSection" skin="captcha.html" acceptOutput="true">
+				<glz:EmptyComponent id="captchaImage" skin="captchaImage.html"/>
+			</glz:EmptyComponent>
+
+			<glz:Panel cssClass="formButtons" >
+				<glz:HtmlButton id="submit" label="{i18n:MW_SUBMIT}" value="submit" name="submit" cssClass="submitButton reserved-area-button" />
+			</glz:Panel>
+		</glz:Form>
+	</mvc:State>
+
+	<mvc:State name="requested">
+		<glz:EmptyComponent id="navigation" editableRegion="filters" skin="metafadNavigation.html" />
+		<glz:EmptyComponent skin="metafadRequestDone.html" acceptOutput="true" editableRegion="content">
+			<glz:LongText id="requestText" label="{i18n:Testo richiesta completata}" adm:rows="20" adm:cols="75" adm:htmlEditor="true" forceP="true" adm:required="true" />
+		</glz:EmptyComponent>
+	</mvc:State>
+</mvc:Page>

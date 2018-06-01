@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glz:Config xmlns:glz="http://www.glizy.org/dtd/1.0/">
+    <glz:Param name="CHARSET" value="UTF-8" />
+    <glz:Param name="APP_NAME" value="Metafad Frontend" />
+    <glz:Param name="APP_VERSION" value="1.0 beta 5" />
+    <glz:Param name="APP_AUTHOR">
+    <![CDATA[Gruppo Meta <http://www.gruppometa.it>]]>
+    </glz:Param>
+
+    <glz:Param name="DB_TYPE" value="mysql" />
+    <glz:Param name="DB_HOST" value="{{env:MYSQL_HOST}}" />
+    <glz:Param name="DB_NAME" value="{{env:MYSQL_DB_NAME_FE}}" />
+    <glz:Param name="DB_USER" value="{{env:MYSQL_USERNAME}}" />
+    <glz:Param name="DB_PSW" value="{{env:MYSQL_PASSWORD}}" />
+    <glz:Param name="DB_PREFIX" value="" />
+
+    <glz:Param name="DB_TYPE#2" value="mysql" />
+    <glz:Param name="DB_HOST#2" value="{{env:MYSQL_HOST}}" />
+    <glz:Param name="DB_NAME#2" value="{{env:MYSQL_DB_NAME_BE}}" />
+    <glz:Param name="DB_USER#2" value="{{env:MYSQL_USERNAME}}" />
+    <glz:Param name="DB_PSW#2" value="{{env:MYSQL_PASSWORD}}" />
+    <glz:Param name="DB_PREFIX#3" value="" />
+
+    <glz:Param name="DB_TYPE#3" value="mysql" />
+    <glz:Param name="DB_HOST#3" value="{{env:MYSQL_HOST}}" />
+    <glz:Param name="DB_NAME#3" value="{{env:MYSQL_DB_NAME_ECOMMERCE}}" />
+    <glz:Param name="DB_USER#3" value="{{env:MYSQL_USERNAME}}" />
+    <glz:Param name="DB_PSW#3" value="{{env:MYSQL_PASSWORD}}" />
+    <glz:Param name="DB_PREFIX#3" value="" />
+
+    <glz:Param name="SMTP_HOST" value="{{env:SMTP_HOST}}" />
+    <glz:Param name="SMTP_USER" value="{{env:SMTP_USER}}" />
+    <glz:Param name="SMTP_PSW" value="{{env:SMTP_PSW}}" />
+    <glz:Param name="SMTP_SENDER" value="{{env:SMTP_SENDER}}" />
+    <glz:Param name="SMTP_EMAIL" value="{{env:SMTP_EMAIL}}" />
+    <glz:Param name="SMTP_PORT" value="{{env:SMTP_PORT}}" />
+
+    <glz:Param name="IMG_WIDTH" value="400" />
+    <glz:Param name="IMG_HEIGHT" value="300" />
+    <glz:Param name="THUMB_SMALL_WIDTH" value="56" />
+    <glz:Param name="THUMB_SMALL_HEIGHT" value="56" />
+    <glz:Param name="THUMB_WIDTH" value="*" />
+    <glz:Param name="THUMB_HEIGHT" value="80" />
+    <glz:Param name="IMG_LIST_WIDTH" value="100" />
+    <glz:Param name="IMG_LIST_HEIGHT" value="*" />
+
+    <glz:Param name="IMG_DOWNLOAD_WIDTH" value="800" />
+    <glz:Param name="IMG_DOWNLOAD_HEIGHT" value="800" />
+    <glz:Param name="IMG_WATERMARK" value="watermark.png" />
+    <glz:Param name="IMG_WATERMARK_SIZE_PERC" value="45" />
+    <glz:Param name="IMG_WATERMARK_MIN_WIDTH" value="150" />
+    <glz:Param name="IMG_WATERMARK_MIN_HEIGHT" value="150" />
+    <glz:Param name="IMG_WATERMARK_POS" value="RT" />
+    <glz:Param name="glizy.media.imageMagick" value="false" />
+
+    <glz:Param name="SEF_URL" value="full" />
+    <glz:Param name="CACHE_CODE" value="-1" />
+    <glz:Param name="USER_LOG" value="false" />
+    <glz:Param name="DEBUG" value="true" />
+    <glz:Param name="DB_CHARSET" value="utf8" />
+    <glz:Param name="DATASOURCE_MODE" value="db" />
+    <glz:Param name="START_PAGE" value="1" />
+    <glz:Param name="PSW_METHOD" value="MD5" />
+    <glz:Param name="MULTILANGUAGE_ENABLED" value="true" />
+    <glz:Param name="DEFAULT_LANGUAGE" value="it" />
+
+    <glz:Param name="SMTP_HOST" value="" />
+    <glz:Param name="SMTP_USER" value="" />
+    <glz:Param name="SMTP_PSW" value="" />
+    <glz:Param name="SMTP_SENDER" value="Polo Digitale Napoli" />
+    <glz:Param name="SMTP_EMAIL" value="info@polodigitale.it" />
+
+    <glz:Param name="QUERY_CACHING_INIT" value="true" />
+    <glz:Param name="QUERY_CACHING_LIFETIME" value="1000" />
+
+    <glz:Param name="SESSION_PREFIX" value="mwcms_fe" />
+
+    <glz:Param name="GLIZY_JQUERY" value="jquery-1.8.3.min.js" />
+    <glz:Param name="glizycms.template.default" value="Default" />
+    <glz:Param name="glizycms.contents.templateEnabled" value="true" />
+    <glz:Param name="glizycms.mediaArchive.mediaMappingEnabled" value="true" />
+    <glz:Param name="glizy.dataAccess.serializationMode" value="json" />
+    <glz:Param name="glizy.dataAccess.documentVisibility" value="true" />
+    <glz:Param name="glizy.routing.newParser" value="false" />
+    <glz:Param name="mwcms.ecomm.enabled" value="true" />
+    <glz:Param name="museoweb.ecommerce.gateway" value="museoweb.modules.ecommerce.gateway.Simulate" />
+
+    <glz:Param name="FORM_ITEM_TEMPLATE"><![CDATA[
+        <div class="row">
+          <div class="col-md-3 col-lg-3 content-align-right">
+            ##FORM_LABEL##
+          </div>
+          <div class="col-md-9 col-lg-9">
+            <div class="block-field bselect-show-input-search">
+              <p>
+                ##FORM_ITEM##
+              </p>
+            </div>
+          </div>
+        </div>
+    ]]></glz:Param>
+    <glz:Param name="FORM_ITEM_RIGHT_LABEL_TEMPLATE"><![CDATA[
+      <div class="control-group clearfix">
+        ##FORM_LABEL##
+        <div class="controls col-lg-9">
+          ##FORM_ITEM##
+        </div>
+      </div>
+    ]]></glz:Param>
+    <glz:Param name="glizycms.form.buttonsPanel"><![CDATA[
+        <div class="control-group col-lg-12 clearfix" id="##ID##">
+          ##CONTENT##
+        </div>
+    ]]></glz:Param>
+
+    <glz:Param name="GLIZY_ADD_JQUERY_JS" value="true"/>
+    <glz:Param name="GLIZY_JQUERY" value="jquery-1.8.3.min.js"/>
+    <glz:Param name="GLIZY_ADD_JQUERYUI_JS" value="true"/>
+    <glz:Param name="GLIZY_JQUERYUI_THEME" value="jquery-ui-bootstrap/jquery-ui-1.10.0.custom.css"/>
+    <glz:Param name="GLIZY_JQUERYUI" value="jquery-ui-1.10.0.custom.min.js"/>
+
+    <glz:Param name="glizy.form.cssClass" value="form-horizontal" />
+    <glz:Param name="glizy.searchFilters.cssClass" value="form-horizontal" />
+    <glz:Param name="glizy.formElement.cssClass" value="form-control" />
+    <glz:Param name="glizy.formElement.cssClassLabel" value="col-lg-6" />
+    <glz:Param name="glizy.formButton.cssClass" value="btn btn-default" />
+
+    <glz:Param name="glizycms.pageEdit.editUrlEnabled" value="true" />
+    <glz:Param name="glizycms.mediaArchive.exifEnabled" value="true" />
+
+
+    <glz:Param name="oaipmh.protocolVersion" value="2.0" />
+    <glz:Param name="oaipmh.granularity" value="YYYY-MM-DDThh:mm:ssZ" />
+    <glz:Param name="oaipmh.delimiter" value=":" />
+    <glz:Param name="oaipmh.idPrefix" value="" />
+    <glz:Param name="oaipmh.maxRecords" value="50" />
+    <glz:Param name="oaipmh.maxIds" value="200" />
+    <glz:Param name="oaipmh.title" value="" />
+    <glz:Param name="oaipmh.adminEmail" value="" />
+    <glz:Param name="oaipmh.earliestDatestamp" value="2011-01-01T00:00:00Z" />
+    <glz:Param name="oaipmh.repositoryIdentifier" value="" />
+    <glz:Param name="oaipmh.oaiPrefix" value="oai{{oaipmh.delimiter}}{{oaipmh.repositoryIdentifier}}{{oaipmh.delimiter}}{{oaipmh.idPrefix}}" />
+
+    <glz:Param name="BASE_REGISTRY_PATH" value="museoweb" />
+    <glz:Param name="STATIC_FOLDER" value="static/museoweb/" />
+    <glz:Param name="museoweb.homeSlider.width" value="1200" />
+    <glz:Param name="museoweb.homeSlider.height" value="311" />
+    <glz:Param name="museoweb.homeSlider.crop" value="true" />
+
+    <glz:Param name="ACL_ENABLED" value="true" />
+    <glz:Param name="ACL_ROLES" value="true" />
+    <glz:Param name="ACL_MODULES" value="true" />
+    <glz:Param name="ACL_CLASS" value="org.glizy.application.AclAdvanced" />
+
+    <glz:Param name="metafad.url" value="{{env:METAFAD_URL_EXTERNAL}}"/>
+    <glz:Param name="metafad.base" value="{{env:METAFAD_URL}}"/>
+    <glz:Param name="metacms.serviceBase" value="{{env:SEARCH_SERVICES_HOST}}"/>
+    <glz:Param name="metafad.solr.base" value="{{env:SOLR_HOST}}"/>
+
+    <glz:Param name="metacms.solr.url" value="{{metacms.serviceBase}}/opac/search"/>
+    <glz:Param name="metacms.solr.field.url" value="{{metacms.serviceBase}}/opac/fields"/>
+    <glz:Param name="metacms.solr.autocomplete.url" value="{{metacms.serviceBase}}/opac/facet"/>
+    <glz:Param name="metacms.solr.detail.url" value="{{metacms.serviceBase}}/opac/resource"/>
+
+    <glz:Param name="metacms.iccd.url" value="{{metacms.serviceBase}}/iccd/search"/>
+    <glz:Param name="metacms.iccd.field.url" value="{{metacms.serviceBase}}/iccd/fields"/>
+    <glz:Param name="metacms.iccd.autocomplete.url" value="{{metacms.serviceBase}}/iccd/facet"/>
+    <glz:Param name="metacms.iccd.detail.url" value="{{metacms.serviceBase}}/iccd/resource"/>
+
+    <glz:Param name="metacms.archive-ca.url" value="{{metacms.serviceBase}}/archivio-ca/search"/>
+    <glz:Param name="metacms.archive-ca.field.url" value="{{metacms.serviceBase}}/archivio-ca/fields"/>
+    <glz:Param name="metacms.archive-ca.autocomplete.url" value="{{metacms.serviceBase}}/archivio-ca/facet"/>
+    <glz:Param name="metacms.archive-ca.detail.url" value="{{metacms.serviceBase}}/archivio-ca/resource"/>
+
+    <glz:Param name="metacms.archive-ud.url" value="{{metacms.serviceBase}}/archivio-ud/search"/>
+    <glz:Param name="metacms.archive-ud.field.url" value="{{metacms.serviceBase}}/archivio-ud/fields"/>
+    <glz:Param name="metacms.archive-ud.autocomplete.url" value="{{metacms.serviceBase}}/archivio-ud/facet"/>
+    <glz:Param name="metacms.archive-ud.detail.url" value="{{metacms.serviceBase}}/archivio-ud/resource"/>
+    <glz:Param name="metacms.archive-ua.detail.url" value="{{metacms.serviceBase}}/archivio-ua/resource"/>
+
+    <glz:Param name="metacms.metaindice.url" value="{{metacms.serviceBase}}/metaindice/search"/>
+    <glz:Param name="metacms.metaindice.field.url" value="{{metacms.serviceBase}}/metaindice/fields"/>
+    <glz:Param name="metacms.metaindice.autocomplete.url" value="{{metacms.serviceBase}}/metaindice/facet"/>
+    <glz:Param name="metacms.metaindice.detail.url" value="{{metacms.serviceBase}}/metaindice/resource"/>
+
+    <glz:Param name="metacms.metaindice-au.url" value="{{metacms.serviceBase}}/metaindice-au/search"/>
+    <glz:Param name="metacms.metaindice-au.field.url" value="{{metacms.serviceBase}}/metaindice-au/fields"/>
+    <glz:Param name="metacms.metaindice-au.autocomplete.url" value="{{metacms.serviceBase}}/metaindice-au/facet"/>
+    <glz:Param name="metacms.metaindice-au.detail.url" value="{{metacms.serviceBase}}/metaindice-au/resource"/>
+
+    <glz:Param name="metacms.opac-au.detail.url" value="{{metacms.serviceBase}}/opac-au/resource"/>
+
+    <glz:Param name="metacms.iccd-au.detail.url" value="{{metacms.serviceBase}}/iccdau/resource"/>
+
+    <glz:Param name="metacms.archivio-au.detail.url" value="{{metacms.serviceBase}}/archivio-au/resource"/>
+
+    <glz:Param name="solr.core.be" value="{{env:SOLR_CORE_BE}}"/>
+    <glz:Param name="solr.core.fe" value="{{env:SOLR_CORE_FE}}"/>
+    <glz:Param name="solr.core.metaindice" value="{{env:SOLR_CORE_METAINDICE}}"/>
+    <glz:Param name="solr.core.archive" value="{{env:SOLR_CORE_ARCHIVE}}"/>
+
+    <glz:Param name="metafad.solr.url" value="{{metafad.solr.base}}/solr/{{solr.core.be}}/"/>
+    <glz:Param name="metafad.solr.url.fe" value="{{metafad.solr.base}}/solr/{{solr.core.fe}}/"/>
+    <glz:Param name="metafad.solr.metaindice.url" value="{{metafad.solr.base}}/solr/{{solr.core.metaindice}}/"/>
+    <glz:Param name="metafad.solr.archive.url" value="{{metafad.solr.base}}/solr/{{solr.core.archive}}/"/>
+
+    <glz:Param name="metafad.opac.roles" value="{{metacms.serviceBase}}/opac/roles?bid="/>
+    <glz:Param name="metafad.archive.roles" value="{{metacms.serviceBase}}/archivio-ud/roles?id="/>
+    <glz:Param name="metafad.iccd.roles" value="{{metacms.serviceBase}}/iccd/roles?id="/>
+
+	  <glz:Param name="metafad.fe.urlViewerService" value="{{metafad.base}}/rest/viewer/metadato/" />
+	  <glz:Param name="getNewDocumentsService" value="{{metafad.base}}/rest/newDoc" />
+	  <glz:Param name="gruppometa.dam.url.local" value="{{env:DAM_REST_URL}}"/>
+
+    <glz:Param name="gruppometa.dam.url" value="{{env:DAM_REST_URL}}"/>
+    <glz:Param name="metafad.modules.dam.maxResizeWidth" value="1200" />
+  	<glz:Param name="gruppometa.dam.url" value="{{metafad.base}}/meta_dam/admin/rest/dam/"/>
+  	<glz:Param name="advancedSearch.model" value="metafad.opac.models.Model" />
+
+  	<glz:Param name="tinyUrl.url" value="http://tinyurl.com/api-create.php?url=" />
+
+  	<!-- CONFIG INSTALLAZIONE -->
+  	<glz:Param name="metafad.fe.hasInstitutes" value="true" />
+  	<glz:Param name="metafad.fe.activeSearch"><![CDATA[
+          {"metaindice" : true,
+  		 "metaindiceau" : true,
+  		 "archive": true,
+  		 "iccd": true,
+  		 "sbn": true}
+      ]]></glz:Param>
+  	<glz:Param name="metafad.fe.hasRequests" value="true" />
+  	<glz:Param name="metafad.fe.hasEcommerce" value="true" />
+  	<glz:Param name="metafad.fe.hasSocial" value="true" />
+  	<glz:Param name="metafad.fe.resultPerPage" value="15" />
+
+  	<glz:Param name="metafad.fe.lod.serverRoot" value="{{GLZ_HOST}}/lod/" />
+  	<glz:Param name="metafad.fe.lod.serverApi" value="{{GLZ_HOST}}/lod/api/" />
+
+  	<glz:Param name="metafad.image.size.newDocs" value="w=300&amp;h=300"/>
+    <glz:Param name="metafad.image.size.search" value="thumbnail"/>
+    <glz:Param name="metafad.image.size.detail" value="w=250&amp;h=*"/>
+    <glz:Param name="metafad.image.size.zoom" value="original"/>
+    <glz:Param name="metafad.fe.viewer.viewerHeight" value=""/>
+
+  	<glz:Param name="metafad.fe.search.hasCustomServices" value="true" />
+  	<glz:Param name="metafad.fe.search.checkPermission" value="false" />
+
+  	<glz:Param name="ACL_ENABLED" value="true" />
+  	<glz:Param name="ACL_ROLES" value="true" />
+  	<glz:Param name="ACL_MODULES" value="true" />
+  	<glz:Param name="ACL_CLASS" value="org.glizy.application.AclAdvanced" />
+</glz:Config>

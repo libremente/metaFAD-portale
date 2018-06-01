@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mvc:Page id="Page"
+    xmlns:glz="http://www.glizy.org/dtd/1.0/"
+    xmlns:nd="metafad.newDoc.views.components.*"
+    xmlns:col="metafad.modules.collections.views.components.*"
+    xmlns:ins="metafad.modules.institutesManagement.views.components.*"
+    xmlns:mvc="org.glizy.mvc.components.*"
+    templateType="php"
+    templateFileName="home.php"
+    defaultEditableRegion="content">
+    <glz:Import src="Common.xml" />
+
+
+    <mvc:State name="index">
+        <col:CollectionList id="collections" skin="collections.html" home="true"/>
+        <nd:NewDocuments id="newDoc" skin="newDocuments.html" />
+    </mvc:State>
+</mvc:Page>

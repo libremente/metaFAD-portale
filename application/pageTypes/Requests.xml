@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mvc:Page id="Page"
+    xmlns:glz="http://www.glizy.org/dtd/1.0/"
+    xmlns:mvc="org.glizy.mvc.components.*"
+    xmlns:mwf="metafad.requests.views.components.*"
+    controllerName="metafad.requests.controllers.*"
+    templateType="php"
+    templateFileName="popup.php"
+    defaultEditableRegion="content">
+    <glz:Import src="Common.xml" />
+
+    <mvc:State name="index">
+
+    </mvc:State>
+
+    <mvc:State name="request">
+      <glz:EmptyComponent id="back" skin="backButton_detail.html" editableRegion="buttons"/>
+      <mwf:ShowRequest id="showRequest" skin="requestItem.html"/>
+    </mvc:State>
+
+    <mvc:State name="set">
+      <glz:EmptyComponent id="backToSearch" skin="backToSearch.html" />
+    </mvc:State>
+
+    <mvc:State name="login">
+    	<glz:LongText id="text" label="{i18n:MW_PARAGRAPH_TEXT}" forceP="true" adm:rows="20" adm:cols="75" adm:htmlEditor="true" />
+
+    	<!-- <glz:LoginBox editableRegion="contents" id="formLoginPage"
+              cssClass="col-md-offset-3 col-md-6"
+    					userField="username" passwordField="password"
+    					registrationUrl="Registration"
+              askPasswordUrl="lostpassword"
+              accessPageId="Home"
+    					skin="Login.html" /> -->
+
+      <glz:EmptyComponent skin="requestMessage.html" />
+    </mvc:State>
+</mvc:Page>

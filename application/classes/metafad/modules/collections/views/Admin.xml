@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glz:include
+  xmlns:cms="org.glizycms.views.components.*"
+  src="org.glizycms.views.TemplateModuleAdmin">
+  <glz:template name="model" value="metafad.modules.collections.models.Model" />
+  <glz:template name="show_external_id" value="false" />
+
+
+  <glz:template name="grid_fields">
+    <glz:DataGridColumn columnName="title" headerText="{i18n:Titolo}" renderCell="org.glizycms.contents.views.renderer.DocumentTitle" width="50" />
+    <glz:DataGridColumn columnName="type" headerText="{i18n:Tipo}" width="5" />
+    <glz:DataGridColumn columnName="position" headerText="{i18n:Posizione}" width="10" />
+    <glz:DataGridColumn columnName="document_creationDate" headerText="{i18n:Data Creazione}" width="15" />
+    <glz:DataGridColumn columnName="document_detail_modificationDate" headerText="{i18n:Data Ultima Modifica}" width="15"/>
+  </glz:template>
+
+  <glz:template name="form_fields">
+    <glz:Input id="title" label="{i18n:Titolo}" size="90" required="true" />
+    <glz:Input id="menuVoice" label="{i18n:Voce di menù}" size="90" required="true" />
+    <glz:Input id="position" label="{i18n:Posizione}" size="90" type="number" required="true" />
+    <glz:Input id="institute" label="{i18n:Istituto}" required="true" data="type=selectfrom;return_object=true;multiple=false;add_new_values=false;proxy=metafad.institutes.models.proxy.InstituteProxy;"/>
+    <glz:Input id="image" label="{i18n:Immagine}" size="90" required="true" data="type=mediapicker;mediatype=IMAGE;preview=true"/>
+    <glz:Input id="text" label="{i18n:Testo}" required="true" type="multiline" wrap="false" rows="10"/>
+    <glz:List id="type" value="{i18n:Tipo}" required="true">
+      <glz:ListItem key="ICCD" value="ICCD" selected="true"/>
+      <glz:ListItem key="SBN" value="SBN" />
+      <glz:ListItem key="archive" value="Archivi" />
+      <glz:ListItem key="metaindice" value="Metaindice" />
+    </glz:List>
+    <glz:Input id="query" label="{i18n:Query}" required="true" />
+  </glz:template>
+
+</glz:include>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mvc:Page id="Page"
+    xmlns:glz="http://www.glizy.org/dtd/1.0/"
+    xmlns:solr="metacms.modules.solr.views.components.*"
+    xmlns:mvc="org.glizy.mvc.components.*"
+    controllerName="metacms.modules.solr.controllers.*"
+    templateType="php"
+    templateFileName="search.php"
+    defaultEditableRegion="content">
+    <glz:Import src="Common.xml" />
+
+ 		<glz:JSscript folder="metacms/modules/solr/js"/>
+
+    <mvc:State name="index,sbn">
+
+      <solr:SearchType id="searchType" editableRegion="filters" skin="searchType.html"/>
+
+      <solr:AdvancedSearch id="advancedSearch" skin="advancedSearch.html"/>
+    </mvc:State>
+
+    <mvc:State name="archive">
+      <solr:SearchType id="searchType" editableRegion="filters" skin="searchType_archive.html" section="archivi"/>
+
+      <solr:AdvancedSearch id="advancedSearch" skin="advancedSearch.html" searchUrl="solr_search_archive" section="archivi" solrFieldUrl="metacms.archive-ca.field.url" autocompleteUrl="metacms.archive-ca.autocomplete.url"/>
+
+      <glz:EmptyComponent id="showArchives" editableRegion="showArchives" skin="showArchives.html" />
+    </mvc:State>
+
+    <mvc:State name="iccd">
+      <solr:SearchType id="searchType" editableRegion="filters" skin="searchType.html" section="patrimonio"/>
+
+      <solr:AdvancedSearch id="advancedSearch" skin="advancedSearch.html" searchUrl="solr_search_iccd" section="patrimonio" solrFieldUrl="metacms.iccd.field.url" autocompleteUrl="metacms.iccd.autocomplete.url"/>
+    </mvc:State>
+
+    <mvc:State name="metaindice">
+      <solr:SearchType id="searchType" editableRegion="filters" skin="searchType.html" section="metaindice"/>
+
+      <solr:AdvancedSearch id="advancedSearch" skin="advancedSearch.html" searchUrl="solr_search_metaindice" section="metaindice" solrFieldUrl="metacms.metaindice.field.url" autocompleteUrl="metacms.metaindice.autocomplete.url"/>
+    </mvc:State>
+
+    <mvc:State name="metaindiceau">
+      <solr:SearchType id="searchType" editableRegion="filters" skin="searchType.html" section="metaindiceau"/>
+
+      <solr:AdvancedSearch id="advancedSearch" skin="advancedSearch.html" searchUrl="solr_search_metaindice_au" section="metaindiceau" solrFieldUrl="metacms.metaindice-au.field.url" autocompleteUrl="metacms.metaindice-au.autocomplete.url"/>
+    </mvc:State>
+</mvc:Page>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mvc:Page id="Page"
+    xmlns:glz="http://www.glizy.org/dtd/1.0/"
+    xmlns:solr="metacms.modules.solr.views.components.*"
+    xmlns:mvc="org.glizy.mvc.components.*"
+    xmlns:arc="metafad.archive.views.components.*"
+    xmlns:mwf="metafad.views.components.*"
+    controllerName="metacms.modules.solr.controllers.*"
+    templateType="php"
+    templateFileName="popup.php"
+    defaultEditableRegion="content">
+    <glz:Import src="Common.xml" />
+
+    <mvc:State name="detail">
+      <glz:JSscript editableRegion="content" src="application/classes/metacms/modules/solr/js/advancedSearch.js"/>
+
+      <solr:Detail id="detail" skin="OpacDetail_popup.html" mediaType="sbn"/>
+    </mvc:State>
+
+    <mvc:State name="detailiccdaut">
+      <glz:JSscript editableRegion="content" src="application/classes/metacms/modules/solr/js/advancedSearch.js"/>
+
+      <solr:Detail id="detail" skin="OpacDetail.html" solrUrl="metacms.iccd-au.detail.url"/>
+    </mvc:State>
+
+    <mvc:State name="detailaut">
+      <glz:JSscript editableRegion="content" src="application/classes/metacms/modules/solr/js/advancedSearch.js"/>
+
+      <solr:Detail id="detail" skin="OpacDetail_popup.html" solrUrl="metacms.opac-au.detail.url"/>
+    </mvc:State>
+
+    <mvc:State name="detailarchiveaut">
+      <glz:JSscript editableRegion="content" src="application/classes/metacms/modules/solr/js/advancedSearch.js"/>
+
+      <solr:Detail id="detail" skin="OpacDetail.html" solrUrl="metacms.archivio-au.detail.url" detailType="archive"/>
+      <glz:JSscript editableRegion="content" src="application/classes/metafad/archive/js/detailArchiveEntity.js"/>
+    </mvc:State>
+
+</mvc:Page>

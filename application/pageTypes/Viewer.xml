@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mvc:Page id="Page"
+    xmlns:glz="http://www.glizy.org/dtd/1.0/"
+    xmlns:mwf="metafad.viewer.views.components.*"
+    xmlns:mvc="org.glizy.mvc.components.*"
+    controllerName="metacms.modules.solr.controllers.*"
+    templateType="php"
+    templateFileName="viewer.php"
+    defaultEditableRegion="content">
+    <glz:Import src="Common.xml" />
+
+    <mvc:State name="index">
+      <glz:EmptyComponent editableRegion="backButton" skin="backButton_detail.html" />
+      <mwf:Viewer id="viewer" />
+    </mvc:State>
+
+</mvc:Page>

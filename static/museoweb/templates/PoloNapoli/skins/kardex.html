@@ -1,0 +1,29 @@
+<tal:block metal:define-macro="kardex">
+    <div id="tabsNav" class="tabs-nav">
+        <tal:block tal:repeat="item kardex">
+            <ul class="ul-level-1">
+                <li tal:repeat="item2 item">
+                    <a tal:attributes="href php: '#level1-' . repeat.item.key . '-' . repeat.item2.key; class php: (repeat.item.number == 1) ? 'active' : ''" tal:content="repeat/item2/key"></a>
+                </li>
+            </ul>
+            <tal:block tal:repeat="item2 item">
+                <div tal:attributes="id php: 'level1-' . repeat.item.key . '-' . repeat.item2.key; class php: ((repeat.item2.number == 1 AND repeat.item.number == 1) ? 'current ' : '')  . 'ul-level-1-content' ">
+                    <ul class="ul-level-2">
+                        <li tal:repeat="item3 item2">
+                            <a tal:attributes="href php: '#level2-' . repeat.item.key . '-' . repeat.item2.key . '-' . repeat.item3.key; class php: (repeat.item3.number == 1 AND repeat.item.number == 1) ? 'active' : ''" tal:content="repeat/item3/key"></a>
+                        </li>
+                    </ul>
+                    <div class="ul-level-2-content current">
+                        <div tal:repeat="item3 item2" tal:attributes="id php: 'level2-' . repeat.item.key . '-' . repeat.item2.key . '-' . repeat.item3.key ; class php: (repeat.item3.number == 1 AND repeat.item.number == 1) ? 'current' : ''">
+                            <ul>
+                                <li tal:repeat="item4 item3">
+                                    <a target="_blank" tal:attributes="href item4" tal:content="php: current(array_keys(item4))"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </tal:block>
+        </tal:block>
+    </div>
+</tal:block>

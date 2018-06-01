@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glz:include
+  xmlns:cms="org.glizycms.views.components.*"
+  src="org.glizycms.views.TemplateModuleAdmin">
+  <glz:template name="model" value="metafad.modules.institutesManagement.models.Model" />
+  <glz:template name="show_external_id" value="false" />
+
+
+  <glz:template name="grid_fields">
+    <glz:DataGridColumn columnName="name" headerText="{i18n:Titolo}" renderCell="org.glizycms.contents.views.renderer.DocumentTitle" width="70" />
+    <glz:DataGridColumn columnName="document_creationDate" headerText="{i18n:Data Creazione}" width="15" />
+    <glz:DataGridColumn columnName="document_detail_modificationDate" headerText="{i18n:Data Ultima Modifica}" width="15"/>
+  </glz:template>
+
+  <glz:template name="form_fields">
+    <glz:JSscript src="../application/classes/metafad/modules/institutesManagement/js/institutesManagement.js"/>
+
+    <glz:Input id="name" label="{i18n:Nome}" size="90" required="true" />
+    <glz:Input id="institute" label="{i18n:Istituto}" required="true" data="type=selectfrom;return_object=true;multiple=false;add_new_values=false;proxy=metafad.institutes.models.proxy.InstituteProxy;"/>
+    <glz:Input id="image" label="{i18n:Immagine}" size="90" required="true" data="type=mediapicker;mediatype=IMAGE;preview=true"/>
+    <glz:Input id="headerImage" label="{i18n:Immagine istituto selezionato}" size="90" data="type=mediapicker;mediatype=IMAGE;preview=true"/>
+    <glz:Input id="text" label="{i18n:Descrizione}" required="true" type="multiline" wrap="false" rows="10"/>
+    <glz:List id="consultation" label="{i18n:Consultazione}">
+      <glz:ListItem key="false" value="No" selected="true"/>
+      <glz:ListItem key="true" value="Si"/>
+    </glz:List>
+    <glz:List id="digitalization" label="{i18n:Digitalizzazione}">
+      <glz:ListItem key="false" value="No" selected="true"/>
+      <glz:ListItem key="true" value="Si"/>
+    </glz:List>
+    <glz:List id="copies" label="{i18n:Acquisto copie digitali}">
+      <glz:ListItem key="false" value="No" selected="true"/>
+      <glz:ListItem key="true" value="Si"/>
+    </glz:List>
+	<glz:Fieldset label="{i18n:Valore localizzazioni in record SBN}">
+		<glz:Input id="baseindex_key" label="{i18n:Nome istituto su indice SBN}" size="90" />
+		<glz:Input id="metaindex_key" label="{i18n:Nome istituto su metaindice}" size="90" />
+	</glz:Fieldset>
+	<glz:Fieldset label="{i18n:Indici di ricerca disponibili}">
+		<glz:List id="metaindice" label="{i18n:Metaindice}">
+	      <glz:ListItem key="false" value="No" selected="true"/>
+	      <glz:ListItem key="true" value="Si"/>
+	    </glz:List>
+		<glz:List id="metaindiceau" label="{i18n:Metaindice authorities}">
+	      <glz:ListItem key="false" value="No" selected="true"/>
+	      <glz:ListItem key="true" value="Si"/>
+	    </glz:List>
+		<glz:List id="archive" label="{i18n:Archivistico}">
+	      <glz:ListItem key="false" value="No" selected="true"/>
+	      <glz:ListItem key="true" value="Si"/>
+	    </glz:List>
+		<glz:List id="iccd" label="{i18n:ICCD}">
+	      <glz:ListItem key="false" value="No" selected="true"/>
+	      <glz:ListItem key="true" value="Si"/>
+	    </glz:List>
+		<glz:List id="sbn" label="{i18n:SBN}">
+	      <glz:ListItem key="false" value="No" selected="true"/>
+	      <glz:ListItem key="true" value="Si"/>
+	    </glz:List>
+	</glz:Fieldset>
+  </glz:template>
+</glz:include>
