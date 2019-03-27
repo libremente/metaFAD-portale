@@ -1,7 +1,7 @@
 publiccodeYmlVersion: '0.2'
 name: metaFAD
 releaseDate: '2018-06-01'
-url: 'https://github.com/libremente/metaFAD-portale.git'
+url: 'https://github.com/ICARICCU-Polodigitaleistitutinapoletani/metaFAD-portale'
 developmentStatus: stable
 softwareType: standalone/web
 platforms:
