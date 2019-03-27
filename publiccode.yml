@@ -1,0 +1,75 @@
+publiccodeYmlVersion: '0.2'
+name: metaFAD
+releaseDate: '2018-06-01'
+url: 'https://github.com/libremente/metaFAD-portale.git'
+developmentStatus: stable
+softwareType: standalone/web
+platforms:
+  - web
+categories:
+  - data-collection
+  - data-analytics
+  - data-visualization
+maintenance:
+  type: contract
+  contractors:
+    - name: Almaviva
+      until: '2021-01-01'
+legal:
+  license: AGPL-3.0-or-later
+  repoOwner: Istituto Centrale per il Catalogo Unico
+intendedAudience:
+  scope:
+    - culture
+    - research
+    - science-and-technology
+    - society
+  countries:
+    - it
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - it
+usedBy:
+  - Pio Monte della Misericordia
+  - Cappella del tesoro di San Gennaro
+  - Società napoletana di storia patria
+  - Fondazione biblioteca Benedetto Croce
+  - Istituto Italiano per gli studi storici
+description:
+  it:
+    genericName: Piattaforma gestione Beni Culturali 
+    shortDescription: Piattaforma di gestione integrata di Beni Culturali
+    longDescription: >
+      La **teca per la gestione degli oggetti digitali** e dei metadati
+      gestionali è costituita da un DAM (Digital Assets Management) 
+      che consente la manipolazione  degli oggetti digitali e
+      la generazione dei formati file derivati. 
+
+      Un  editor dedicato consente la compilazione semi-automatica dei metadati 
+      strutturali per la descrizione fisica del documento e la descrizione 
+      logica del testo/contenuto. Specifici servizi della teca consentono sia 
+      l’importazione di pacchetti gestionali (MAG e METS) già disponibili sia la
+      generazione ex novo di tali formati secondo i tracciati adottati dai
+      principali aggregatori.  
+
+      L’integrazione con un OAI-Provider ne consente poi l’esposizione, 
+      attraverso il protocollo di comunicazione OAI-PMH. In questo modo è 
+      possibile l’interazione (con tracciati MAG) con Internet Culturale, 
+      l’aggregatore che presenta le collezioni digitalizzate delle biblioteche
+      italiane. 
+
+      I metadati sono nel formato CAT-SAN e METS-SAN.
+
+    features:
+      - Gestione oggetti digitali
+      - Visore media digitali
+      - Editor metadati
+      - Importazione pacchetti gestionali
+      - Integrazione OAI-Provider
+
+it:
+  countryExtensionVersion: '0.2'
+  riuso:
+    codiceIPA: m_bac
+
